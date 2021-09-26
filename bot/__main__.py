@@ -45,7 +45,7 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("🔮 Slam-Repo", "https://github.com/SlamDevs/slam-mirrorbot")
+    buttons.buildbutton("👤 Ouwner:", "https://t.me/uzumaki_naruto4backup")
     buttons.buildbutton("🚨 Channel Telegram Update", "https://t.me/SlamMirrorUpdates")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
