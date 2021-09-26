@@ -357,7 +357,6 @@ Thanks to:
 - [`Dank-del`](https://github.com/Dank-del) for base repo
 - [`magneto261290`](https://github.com/magneto261290) for some features
 - [`SVR666`](https://github.com/SVR666) for some features & fixes
-- [`anasty17`](https://github.com/anasty17) for some features & help
 - [`breakdowns`](https://github.com/breakdowns) for slam-mirrorbot
 - [`zevtyardt`](https://github.com/zevtyardt) for some direct links
 - [`yash-dk`](https://github.com/yash-dk) for implementation of qBittorrent on Python
