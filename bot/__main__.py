@@ -151,6 +151,8 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
+<b>/{BotCommands.WeebhelpCommand}</b>: Get help for anime, manga & character module.
+<br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
