@@ -151,9 +151,8 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
-<b>/{BotCommands.WeebhelpCommand}</b>: Get help for anime, manga & character module
-<br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
+/weebhelp: Get help for anime, manga and character module.
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -216,7 +215,6 @@ botcmds = [
         (f'{BotCommands.ListCommand}','Searches files in Drive'),
         (f'{BotCommands.StatusCommand}','Get Mirror Status message'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
-        (f'{BotCommands.WeebhelpCommand}','Get help for anime, manga & character module'),
         (f'{BotCommands.PingCommand}','Ping the Bot'),
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
