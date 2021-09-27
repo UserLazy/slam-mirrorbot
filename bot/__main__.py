@@ -88,7 +88,7 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
-<b>/{BotCommands.HelpCommand}</b>: To get this message
+<b>/{BotCommands.HelpCommand}</b>: To get help menu for this bot (Sorry I Use Indonesian Language)
 <br><br>
 <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring tautan ke Google Drive.
 <br><br>
@@ -106,13 +106,13 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & jika file yang diunduh yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
 <br><br>
-<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
+<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Mulai upload ke Telegram, Use <b>/{BotCommands.LeechCommand} s</b> untuk pilih file sebelum upload
 <br><br>
-<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Start leeching to Telegram and upload it as (.tar)
+<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Mulai upload ke Telegram dengan format (.tar)
 <br><br>
-<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and upload it as (.zip)
+<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Mulai upload ke Telegram dengan format (.zip)
 <br><br>
-<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and if downloaded file is any archive, extracts it to Telegram
+<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Mulai mengekstrak jika formatnya (.tar / .zip), lalu menguploadnya ke Telegeram
 <br><br>
 <b>/{BotCommands.QbLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand} s</b> to select files before leeching
 <br><br>
@@ -122,11 +122,11 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and if downloaded file is any archive, extracts it to Telegram
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Ganda file/folder ke Google Drive (Refensi jika link yang anda tuju kehabisan limit pada saat anda buka)
 <br><br>
-<b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
+<b>/{BotCommands.CountCommand}</b> [drive_url]: Hitung file/folder Dari Link Google Drive
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file Dari Google Drive Bot Ini (Only Owner & Sudo)
 <br><br>
 <b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl. Click <b>/{BotCommands.WatchCommand}</b> for more help
 <br><br>
@@ -140,9 +140,9 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl and zip before uploading 
 <br><br>
-<b>/{BotCommands.LeechSetCommand}</b>: Leech Settings 
+<b>/{BotCommands.LeechSetCommand}</b>: Pengaturan Leech
 <br><br>
-<b>/{BotCommands.SetThumbCommand}</b>: Reply photo to set it as Thumbnail
+<b>/{BotCommands.SetThumbCommand}</b>: Reply photo untuk mengatur Thumbnail
 <br><br>
 <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
@@ -157,7 +157,7 @@ help_string_telegraph = f'''<br>
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
         author_name='Bot Sep 21 Publik - [No Bokep]',
-        author_url='https://github.com/SlamDevs/slam-mirrorbot',
+        author_url='https://t.me/sepmirrorleech21_bot',
         html_content=help_string_telegraph,
     )["path"]
 
@@ -168,7 +168,7 @@ help_string = f'''
 
 /{BotCommands.UnAuthorizeCommand}: Batalkan otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
 
-/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrola yang telah di Otorisasi (Hanya Pemilik & Sudo)
+/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrolan yang telah di Otorisasi (Hanya Pemilik & Sudo)
 
 /{BotCommands.AddSudoCommand}: Tambahkan pengguna Sudo (Hanya Pemilik)
 
