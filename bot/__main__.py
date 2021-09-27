@@ -31,15 +31,15 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>💻 Waktu Aktif Bot  ⏱   :</b> <code>{currentTime}</code>\n' \
-            f'<b>🖥 Total Kapasitas Disk    🖥  :</b> <code>{total}</code>\n' \
-            f'<b>💿 Penggunaan    💿  :</b> <code>{used}</code> ' \
-            f'<b>🛠 Sisa    💾  :</b> <code>{free}</code>\n\n' \
+    stats = f'<b>💻 Waktu Aktif Bot ⏱ :</b> <code>{currentTime}</code>\n' \
+            f'<b>🖥 Total Kapasitas Disk 🖥 :</b> <code>{total}</code>\n' \
+            f'<b>💿 Penggunaan 💿  :</b> <code>{used}</code> ' \
+            f'<b>🛠 Sisa 💾 :</b> <code>{free}</code>\n\n' \
             f'<b>🔺 Upload  :</b> <code>{sent}</code>\n' \
-            f'<b>🔻 Download    :</b> <code>{recv}</code>\n\n' \
+            f'<b>🔻 Download :</b> <code>{recv}</code>\n\n' \
             f'<b>💻 CPU :</b> <code>{cpuUsage}%</code> ' \
             f'<b>🧭 RAM :</b> <code>{memory}%</code> ' \
-            f'<b>💿 DISK    :</b> <code>{disk}%</code>'
+            f'<b>💿 DISK :</b> <code>{disk}%</code>'
     sendMessage(stats, context.bot, update)
 
 
@@ -145,13 +145,13 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
-<b>/{BotCommands.CancelAllCommand}</b>: Cancel all running tasks
+<b>/{BotCommands.CancelAllCommand}</b>: Batalkan semua proses yang sedang berjalan
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Searches the search term in the Google Drive, If found replies with the link
+<b>/{BotCommands.ListCommand}</b> [search term]: Mencari Folder/File pada Google Drive (Database Bot)
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
+<b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
+<b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -188,7 +188,7 @@ help_string = f'''
 
 def bot_help(update, context):
     button = button_build.ButtonMaker()
-    button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
+    button.buildbutton("🕹 Other Commands", f"https://telegra.ph/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
     sendMarkup(help_string, context.bot, update, reply_markup)
 
