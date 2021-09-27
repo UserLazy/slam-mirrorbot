@@ -32,6 +32,7 @@ class _BotCommands:
         self.DeleteCommand = 'hapus'
         self.ShellCommand = 'shell'
         self.ExecHelpCommand = 'exechelp'
+        self.WeebHelpCommand = 'weebhelp'
         self.TsHelpCommand = 'torent'
         self.LeechSetCommand = 'leechset'
         self.SetThumbCommand = 'setthumb'
