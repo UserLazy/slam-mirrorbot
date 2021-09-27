@@ -45,8 +45,8 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("👤 Ouwner:", "https://t.me/uzumaki_naruto4backup")
-    buttons.buildbutton("🔰 Donate -> Clik Here 🔎", "https://telegra.ph/Donate-Here-09-25")
+    buttons.buildbutton("👤 Ouwner✅ -> ", "https://t.me/uzumaki_naruto4backup")
+    buttons.buildbutton("🔰 Donate -> Clik Here ↗️", "https://telegra.ph/Donate-Here-09-25")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
