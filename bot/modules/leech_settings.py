@@ -31,9 +31,9 @@ def leechSet(update, context):
     msg += "\nCustom Thumbnail "
     msg += "exists" if os.path.exists(path) else "not exists"
     buttons = button_build.ButtonMaker()
-    buttons.sbutton("As 📑 Document", f"doc {user_id}")
-    buttons.sbutton("As 🖼️ Media", f"med {user_id}")
-    buttons.sbutton("🗑️ Delete Thumbnail", f"thumb {user_id}")
+    buttons.sbutton("🗄     Document", f"doc {user_id}")
+    buttons.sbutton("🖼️    Media", f"med {user_id}")
+    buttons.sbutton("🗑️    Delete Thumbnail", f"thumb {user_id}")
     if AUTO_DELETE_MESSAGE_DURATION == -1:
         buttons.sbutton("Close", f"closeset {user_id}")
     button = InlineKeyboardMarkup(buttons.build_menu(2))
