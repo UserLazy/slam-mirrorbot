@@ -17,7 +17,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, torrent_search, delete, speedtest, count, leech_settings
+from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, torrent_search, delete, speedtest, count, leech_settings, anime
 
 
 def stats(update, context):
@@ -152,7 +152,6 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
-/weebhelp: Get help for anime, manga and character module.
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -185,6 +184,8 @@ help_string = f'''
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
 /{BotCommands.TsHelpCommand}: Dapatkan modul bantuan untuk pencarian Torrent
+
+/weebhelp: Get help for anime, manga and character module
 '''
 
 def bot_help(update, context):
