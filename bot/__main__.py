@@ -89,21 +89,21 @@ def log(update, context):
 help_string_telegraph = f'''<br>
 <b>/{BotCommands.HelpCommand}</b>: To get this message
 <br><br>
-<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
+<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring tautan ke Google Drive.
 <br><br>
-<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & unggah versi unduhan (.tar) yang diarsipkan
 <br><br>
-<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.zip) version of the download
+<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & unggah versi arsip (.zip) dari unduhan
 <br><br>
-<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring file yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
 <br><br>
-<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
+<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Mulai Mencerminkan menggunakan qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum mengunduh
 <br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.tar) version of the download
+<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & unggah versi unduhan (.tar) yang diarsipkan
 <br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.zip) version of the download
+<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & unggah versi arsip (.zip) dari unduhan
 <br><br>
-<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & jika file yang diunduh yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
 <br><br>
 <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
 <br><br>
@@ -154,36 +154,36 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Slam Mirrorbot Help',
-        author_name='Slam Mirrorbot',
+        title='List Perintah Bot Sep 21 Publik',
+        author_name='Bot Sep 21 Publik - [No Bokep]',
         author_url='https://github.com/SlamDevs/slam-mirrorbot',
         html_content=help_string_telegraph,
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
+/{BotCommands.PingCommand}: Periksa berapa lama waktu yang dibutuhkan untuk melakukan Ping pada Bot
 
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+/{BotCommands.AuthorizeCommand}: Otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
 
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+/{BotCommands.UnAuthorizeCommand}: Batalkan otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
 
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
+/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrola yang telah di Otorisasi (Hanya Pemilik & Sudo)
 
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
+/{BotCommands.AddSudoCommand}: Tambahkan pengguna Sudo (Hanya Pemilik)
 
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
+/{BotCommands.RmSudoCommand}: Hapus pengguna Sudo (Hanya Pemilik)
 
-/{BotCommands.RestartCommand}: Restart the bot
+/{BotCommands.RestartCommand}: Mulai ulang bot
 
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+/{BotCommands.LogCommand}: Dapatkan log file bot. Berguna untuk mendapatkan laporan kerusakan
 
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.SpeedCommand}: Periksa Kecepatan Internet Host
 
 /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
 
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
-/{BotCommands.TsHelpCommand}: Get help for Torrent search module
+/{BotCommands.TsHelpCommand}: Dapatkan modul bantuan untuk pencarian Torrent
 '''
 
 def bot_help(update, context):
