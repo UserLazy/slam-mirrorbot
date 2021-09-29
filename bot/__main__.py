@@ -33,7 +33,7 @@ def stats(update, context):
     disk = psutil.disk_usage('/').percent
     stats = f'<b>💻 Waktu Aktif Bot ⏱ :</b> <code>{currentTime}</code>\n' \
             f'<b>🖥 Total Kapasitas Disk 🖥 :</b> <code>{total}</code>\n' \
-            f'<b>💿 Penggunaan :</b> <code>{used}</code> ' \
+            f'<b>💿 Penggunaan :</b> <code>{used}</code>\n' \
             f'<b>💾 Sisa :</b> <code>{free}</code>\n\n' \
             f'<b>🔺 Upload  :</b> <code>{sent}</code>\n' \
             f'<b>🔻 Download :</b> <code>{recv}</code>\n\n' \
