@@ -152,9 +152,6 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
-/weebhelp: Bantuan untuk anime, manga & character.
-/stickerhelp: Bantuan Untuk module stickers.
-/weebify: Dapatkan text font weebify.
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -164,15 +161,15 @@ help = Telegraph(access_token=telegraph_token).create_page(
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Periksa berapa lama waktu yang dibutuhkan untuk melakukan Ping pada Bot
-
 /{BotCommands.AuthorizeCommand}: Otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
+
+/{BotCommands.PingCommand}: Periksa berapa lama waktu yang dibutuhkan untuk melakukan Ping pada Bot
 
 /{BotCommands.UnAuthorizeCommand}: Batalkan otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
 
-/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrolan yang telah di Otorisasi (Hanya Pemilik & Sudo)
-
 /{BotCommands.AddSudoCommand}: Tambahkan pengguna Sudo (Hanya Pemilik)
+
+/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrolan yang telah di Otorisasi (Hanya Pemilik & Sudo)
 
 /{BotCommands.RmSudoCommand}: Hapus pengguna Sudo (Hanya Pemilik)
 
@@ -187,6 +184,10 @@ help_string = f'''
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
 /{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
+
+/weebhelp: Bantuan untuk anime, manga & character.
+/stickerhelp: Bantuan Untuk module stickers.
+/weebify: Dapatkan text font weebify.
 '''
 
 def bot_help(update, context):
