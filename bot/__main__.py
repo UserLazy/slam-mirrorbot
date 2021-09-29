@@ -161,7 +161,7 @@ help = Telegraph(access_token=telegraph_token).create_page(
     )["path"]
 
 help_string = f'''
-/{BotCommands.AuthorizeCommand}: Otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
+/{BotCommands.AuthorizeCommand}: Otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dilakukan oleh Pemilik & Sudo bot)
 
 /{BotCommands.PingCommand}: Periksa berapa lama waktu yang dibutuhkan untuk melakukan Ping pada Bot
 
@@ -177,7 +177,7 @@ help_string = f'''
 
 /{BotCommands.LogCommand}: Dapatkan log file bot. untuk mendapatkan laporan kesalahan pada bot
 
-/{BotCommands.SpeedCommand}: Periksa Kecepatan Internet Host
+/{BotCommands.SpeedCommand}: Periksa Kecepatan Internet (Host)
 
 /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
 
@@ -186,7 +186,9 @@ help_string = f'''
 /{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
 
 /weebhelp: Bantuan untuk anime, manga & character.
+
 /stickerhelp: Bantuan Untuk module stickers.
+
 /weebify: Dapatkan text font weebify.
 '''
 
