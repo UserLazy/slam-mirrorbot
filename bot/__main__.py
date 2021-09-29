@@ -17,7 +17,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, torrent_search, delete, speedtest, count, leech_settings, anime
+from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, torrent_search, delete, speedtest, count, leech_settings, anime, weebify, stickers
 
 
 def stats(update, context):
@@ -91,17 +91,17 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring tautan ke Google Drive.
 <br><br>
-<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & unggah versi unduhan (.tar) yang diarsipkan
+<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & upload versi unduhan (.tar) dari unduhan
 <br><br>
-<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & unggah versi arsip (.zip) dari unduhan
+<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & upload versi arsip (.zip) dari unduhan
 <br><br>
 <b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring file yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
 <br><br>
 <b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Mulai Mencerminkan menggunakan qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum mengunduh
 <br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & unggah versi unduhan (.tar) yang diarsipkan
+<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & upload versi unduhan (.tar) dari unduhan
 <br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & unggah versi arsip (.zip) dari unduhan
+<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & upload versi arsip (.zip) dari unduhan
 <br><br>
 <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & jika file yang diunduh yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
 <br><br>
@@ -152,6 +152,9 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
+/weebhelp: Bantuan untuk anime, manga & character.
+/stickerhelp: Bantuan Untuk module stickers.
+/weebify: Dapatkan text font weebify.
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -175,7 +178,7 @@ help_string = f'''
 
 /{BotCommands.RestartCommand}: Mulai ulang bot
 
-/{BotCommands.LogCommand}: Dapatkan log file bot. Berguna untuk mendapatkan laporan kerusakan
+/{BotCommands.LogCommand}: Dapatkan log file bot. untuk mendapatkan laporan kesalahan pada bot
 
 /{BotCommands.SpeedCommand}: Periksa Kecepatan Internet Host
 
@@ -183,9 +186,7 @@ help_string = f'''
 
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
-/{BotCommands.TsHelpCommand}: Dapatkan modul bantuan untuk pencarian Torrent
-
-/weebhelp: Get help for anime, manga and character module
+/{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
 '''
 
 def bot_help(update, context):
