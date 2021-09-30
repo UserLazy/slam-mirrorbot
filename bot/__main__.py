@@ -40,6 +40,7 @@ def stats(update, context):
             f'<b>💻 CPU :</b> <code>{cpuUsage}%</code> ' \
             f'<b>🧭 RAM :</b> <code>{memory}%</code> ' \
             f'<b>💿 DISK :</b> <code>{disk}%</code>'
+            f'<b>🤖 Upload By : @sepmirrorleech21_bot%</b>'
     sendMessage(stats, context.bot, update)
 
 
