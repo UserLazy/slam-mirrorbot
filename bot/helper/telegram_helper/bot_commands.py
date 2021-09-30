@@ -1,7 +1,7 @@
 class _BotCommands:
     def __init__(self):
         self.StartCommand = 'start'
-        self.MirrorCommand = 'mirrorin'
+        self.MirrorCommand = 'mirrorkan'
         self.UnzipMirrorCommand = 'unzip'
         self.TarMirrorCommand = 'tar'
         self.ZipMirrorCommand = 'zip'
@@ -25,7 +25,7 @@ class _BotCommands:
         self.WatchCommand = 'wtch'
         self.TarWatchCommand = 'tarwtch'
         self.ZipWatchCommand = 'zipwtch'
-        self.QbMirrorCommand = 'qbmirrorin'
+        self.QbMirrorCommand = 'qbmirrorkan'
         self.QbUnzipMirrorCommand = 'qbunzip'
         self.QbTarMirrorCommand = 'qbtar'
         self.QbZipMirrorCommand = 'qbzip'
