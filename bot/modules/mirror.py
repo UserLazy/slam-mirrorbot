@@ -220,7 +220,7 @@ class MirrorListener(listeners.MirrorListeners):
                 chat_id = str(self.message.chat.id)[4:]
                 msg = f"<b>🔰 Name  :</b> <a href='https://t.me/c/{chat_id}/{self.uid}'>{link}</a>\n"
                 msg += f'<b>🔍  Total Files :</b> {count}\n'
-                msg += f'\n\n<b>👤 Request By :</b> ☞ {uname}{chat_id} \n<b>🔰  Silakan Didownload ✅ </b>\n'
+                msg += f'\n\n<b>👤 Request By :</b> ☞ {uname}/{chat_id} \n<b>🔰  Silakan Didownload ✅ </b>\n'
                 fmsg = ''
                 for index, item in enumerate(list(files), start=1):
                     msg_id = files[item]
@@ -291,7 +291,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>👤 Request By :</b> ☞ {uname}{chat_id} \n<b>🔰  Silakan Didownload ✅ </b>\n'
+                msg += f'\n\n<b>👤 Request By :</b> ☞ {uname}/{chat_id} \n<b>🔰  Silakan Didownload ✅ </b>\n'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
