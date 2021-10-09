@@ -6,6 +6,7 @@ attrdict
 beautifulsoup4
 cloudscrape
 feedparser
+git+https://github.com/ytdl-org/youtube-dl
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
@@ -15,7 +16,7 @@ js2py
 jikanpy
 lk21
 lxml
-nekospy
+nekos.py
 pillow
 psutil
 psycopg2-binary
