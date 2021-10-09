@@ -99,9 +99,8 @@ def funhelp(update, context):
  ➻ `/song`*:* Get song from youtube
  ➻ `/tgm`*:* Upload file to telegraph
  ➻ `/tgt`*:* Upload text to telegraph
- ➻ `/kata`*:* Dapatkan text keren
  '''
-    update.effective_message.reply_photo("https://telegra.ph/file/6b6d2675626aa90f67bce.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
 
 RUNS_HANDLER = CommandHandler("runs", runs)
