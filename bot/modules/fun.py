@@ -14,7 +14,7 @@ from bot import dispatcher
 
 GIF_ID = 'CgACAgUAAx0EVmwfqQACElhfo3yZv1njCC11INcQSAi4UlN8vwACqwADg_8wVeGSv41OYU6zHgQ'
 
-PHOTO = 'https://i.imgur.com/UjiCJhZ.jpg'
+PHOTO = 'https://telegra.ph/file/1d77962382170772a14d1.jpg'
 
 
 def runs(update: Update, context: CallbackContext):
@@ -79,7 +79,7 @@ def table(update: Update, context: CallbackContext):
 
 def funhelp(update, context):
     help_string = '''
-  ✙ *𝐍𝐠𝐠𝐚𝐛𝐮𝐭* 👾 *:*
+  ✙ 🤖 *Fitur saat bosan* 🤪 *:*
  ➻ `/runs`*:* Reply a random string from an array of replies
  ➻ `/shrug`*:* Get shrug XD
  ➻ `/table`*:* Get flip/unflip :v
@@ -87,7 +87,7 @@ def funhelp(update, context):
  ➻ `/weebify <text>`*:* Returns a weebified text
  ➻ `/textbulet <text>`*:* Returns a bulet text
   ═ ═ ═ ═ ═ ═ ═ ═ ═ ═
- ✙ *𝐃𝐨𝐥𝐚𝐧𝐚𝐧𝐌𝐛𝐮𝐡* 🎮 *:*
+ ✙ 🤖 *Games* 👾 *:*
  ➻ `/truth`*:* Get ready to reveal a surprising truth🤫
  ➻ `/dare`*:* A dare is on way 😈
  ➻ `/insult`*:* Insult the person
@@ -95,7 +95,7 @@ def funhelp(update, context):
  ➻ `/toss`*:* Tosses A coin
  ➻ `/roll`*:* Roll a dice & get you a number
   ═ ═ ═ ═ ═ ═ ═ ═ ═ ═
- ✙ *𝐄𝐱𝐭𝐫𝐚* ☠️ *:*
+ ✙ 🧨 *Fitur Xtra* 💠 *:*
  ➻ `/song`*:* Get song from youtube
  ➻ `/tgm`*:* Upload file to telegraph
  ➻ `/tgt`*:* Upload text to telegraph
