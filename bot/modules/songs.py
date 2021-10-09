@@ -58,13 +58,13 @@ def song(client, message):
         )
         print(str(e))
         return
-    m.edit("🔎 𝐌𝐞𝐧𝐞𝐦𝐮𝐤𝐚𝐧 𝐥𝐚𝐠𝐮 🎶  𝐌𝐨𝐡𝐨𝐧 𝐭𝐮𝐧𝐠𝐠𝐮⏱️ 𝐔𝐧𝐭𝐮𝐤 𝐛𝐞𝐛𝐞𝐫𝐚𝐩𝐚 𝐝𝐞𝐭𝐢𝐤 [🗣️](https://telegra.ph/file/0bcdc99a139d0ba59c9b6.mp4)")
+    m.edit("🔎 𝐌𝐞𝐧𝐞𝐦𝐮𝐤𝐚𝐧 𝐥𝐚𝐠𝐮 🎶 ,𝐌𝐨𝐡𝐨𝐧 𝐭𝐮𝐧𝐠𝐠𝐮 📡 𝐔𝐧𝐭𝐮𝐤 𝐛𝐞𝐛𝐞𝐫𝐚𝐩𝐚 𝐝𝐞𝐭𝐢𝐤 [🗣️](https://telegra.ph/file/0bcdc99a139d0ba59c9b6.mp4)")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎙️ 𝐉𝐮𝐝𝐮𝐥 : [{title[:35]}]({link})\n⏱️ 𝐃𝐮𝐫𝐚𝐬𝐢 : `{duration}`\n🎬 𝐒𝐮𝐦𝐛𝐞𝐫 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n👁‍🗨 𝐃𝐢𝐭𝐨𝐧𝐭𝐨𝐧 : `{views}`\n\n💌 𝐁𝐲 : @MirroringV3Bot'
+        rep = f'🎙️ 𝐉𝐮𝐝𝐮𝐥 : [{title[:35]}]({link})\n⏰ 𝐃𝐮𝐫𝐚𝐬𝐢 : `{duration}`\n🎥 𝐒𝐮𝐦𝐛𝐞𝐫 : [Youtube](https://youtu.be/3pN0W4KzzNY)\n👤 𝐃𝐢𝐭𝐨𝐧𝐭𝐨𝐧 : `{views}`\n\n🤖 𝐁𝐲: @sepmirrorleech21_bot'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -72,7 +72,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         m.delete()
     except Exception as e:
-        m.edit('❌ 𝐄𝐫𝐫𝐨𝐫\n\n Report This Erorr To Fix @OdierBambi ❤️')
+        m.edit('❌ 𝐄𝐫𝐫𝐨𝐫\n\n Report This Erorr To Fix @uzumaki_naruto4backup ❤️')
         print(e)
     try:
         os.remove(audio_file)
