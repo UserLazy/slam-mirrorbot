@@ -14,6 +14,7 @@ hachoir
 js2py
 lk21
 lxml
+nekos.py
 pillow
 psutil
 psycopg2-binary
@@ -31,4 +32,7 @@ tenacity
 TgCrypto
 torrentool==1.1.0
 urllib3
+youtube_dl
+youtube_search
+youtube-search-python
 youtube_dl
