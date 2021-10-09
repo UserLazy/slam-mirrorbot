@@ -14,7 +14,7 @@ from bot import dispatcher
 
 GIF_ID = 'CgACAgUAAx0EVmwfqQACElhfo3yZv1njCC11INcQSAi4UlN8vwACqwADg_8wVeGSv41OYU6zHgQ'
 
-PHOTO = 'https://telegra.ph/file/1d77962382170772a14d1.jpg'
+PHOTO = 'https://i.imgur.com/UjiCJhZ.jpg'
 
 
 def runs(update: Update, context: CallbackContext):
