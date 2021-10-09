@@ -10,13 +10,13 @@ from telegram.ext import (
     CallbackQueryHandler)
 
 info_btn = "More Information"
-kaizoku_btn = "Kaizoku ☠️"
-doujindesu_btn = "Doujindesu 🏴‍☠️"
-bakadame_btn = "Bakadame ☠️"
-ganime_btn = "Ganime ☠️"
-prequel_btn = "⬅️ Prequel"
-sequel_btn = "Sequel ➡️"
-close_btn = "Close ❌"
+kaizoku_btn = "🤡 Kaizoku 🤡"
+doujindesu_btn = "😍 Doujindesu 😍"
+bakadame_btn = "👾 Bakadame 👾"
+ganime_btn = "🤡 Ganime 🤡"
+prequel_btn = "🤖 Prequel 👈🏻"
+sequel_btn = "👉🏻 Sequel 🤖"
+close_btn = "❌ Close ❌"
 
 
 def site_search(update: Update, context: CallbackContext, site: str):
