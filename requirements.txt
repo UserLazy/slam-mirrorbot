@@ -12,9 +12,10 @@ google-auth-oauthlib
 gunicorn
 hachoir
 js2py
+jikanpy
 lk21
 lxml
-nekos.py
+nekospy
 pillow
 psutil
 psycopg2-binary
