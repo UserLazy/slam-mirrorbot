@@ -144,6 +144,8 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.SetThumbCommand}</b>: Reply photo untuk mengatur Thumbnail
 <br><br>
+<b>/{BotCommands.UsageCommand}</b>: Untuk Melihat Sisa Dyno (Pemilik&Sudo Saja)
+<br><br>
 <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
 <b>/{BotCommands.CancelAllCommand}</b>: Batalkan semua proses yang sedang berjalan
