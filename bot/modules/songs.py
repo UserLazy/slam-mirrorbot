@@ -1,7 +1,7 @@
 import os
 import aiohttp
 from pyrogram import Client, filters
-import youtube-dl
+import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
 
