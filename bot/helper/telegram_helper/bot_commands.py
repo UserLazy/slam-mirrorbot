@@ -34,7 +34,6 @@ class _BotCommands:
         self.ExecHelpCommand = 'exechelp'
         self.TsHelpCommand = 'torent'
         self.MediaInfoCommand = 'mediainfo'
-        self.WeebHelpCommand = 'weebhelp'
         self.LeechSetCommand = 'leechset'
         self.SetThumbCommand = 'setthumb'
         self.LeechCommand = 'upkan'
