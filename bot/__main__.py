@@ -153,8 +153,6 @@ help_string_telegraph = f'''<br>
 <b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
 <br><br>
 <b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
-<br><br>
-<b>/nfswhelp: Dapatkan menu 18+
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -189,6 +187,8 @@ help_string = f'''
 /{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
 
 /weebhelp: Bantuan untuk anime, manga & character.
+
+/nfswhelp: Dapatkan menu 18+
 
 /funyhelp: Get fun help.
 
