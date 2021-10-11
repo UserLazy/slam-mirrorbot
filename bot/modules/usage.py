@@ -75,7 +75,6 @@ def dyno_usage(update, context):
             return True
 
 
-dyno_usage_handler = CommandHandler(command=BotCommands.UsageCommand, callback=dyno_usage,
-                                    filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
-                                    
-dispatcher.add_handler(dyno_usage_handler)
+USAGE_HANDLER = CommandHandler("usage", dyno_usage)
+
+dispatcher.add_handler(USAGE_HANDLER)
