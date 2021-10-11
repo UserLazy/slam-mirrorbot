@@ -7,12 +7,14 @@ beautifulsoup4
 cloudscrape
 feedparser
 git+https://github.com/ytdl-org/youtube-dl
+gTTS
 googletrans==4.0.0-rc1
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 gunicorn
 hachoir
+httpx[http2]
 js2py
 jikanpy
 lk21
