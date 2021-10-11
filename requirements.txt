@@ -7,6 +7,7 @@ beautifulsoup4
 cloudscrape
 feedparser
 git+https://github.com/ytdl-org/youtube-dl
+googletrans==4.0.0-rc1
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
