@@ -39,4 +39,5 @@ torrentool==1.1.0
 urllib3
 youtube_search
 youtube-search-python
+youtube_dl
 youtube-dl==2021.6.6
