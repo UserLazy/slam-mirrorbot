@@ -17,7 +17,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, anime, animequotes, cancel_mirror, clone, count, fun, eval, delete, nhentai, list, leech_settings, mirror, mirror_status, shell, watch, torrent_search, speedtest, weebify, stickers, sitesearch, songs, telegraph, text, tts, waifu 
+from .modules import authorize, anime, animequotes, cancel_mirror, clone, count, fun, eval, delete, nhentai, list, leech_settings, mirror, mirror_status, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, watch, waifu, weebify 
 
 
 def stats(update, context):
