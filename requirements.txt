@@ -6,7 +6,7 @@ attrdict
 beautifulsoup4
 cloudscrape
 feedparser
-git+https://github.com/ytdl-org/youtube-dl
+ffmpeg-python==0.2.0
 gTTS
 googletrans==4.0.0-rc1
 google-api-python-client
@@ -39,4 +39,4 @@ torrentool==1.1.0
 urllib3
 youtube_search
 youtube-search-python
-youtube_dl
+youtube-dl==2021.6.6
