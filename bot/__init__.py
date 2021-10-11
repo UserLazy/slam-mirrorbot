@@ -223,6 +223,16 @@ except KeyError:
     MEGA_EMAIL_ID = None
     MEGA_PASSWORD = None
 try:
+    HEROKU_API_KEY = getConfig('HEROKU_API_KEY')
+except KeyError:
+    logging.warning('HEROKU API KEY not provided!')
+    HEROKU_API_KEY = None
+try:
+    HEROKU_APP_NAME = getConfig('HEROKU_APP_NAME')
+except KeyError:
+    logging.warning('HEROKU APP NAME not provided!')
+    HEROKU_APP_NAME = None
+try:
     UPTOBOX_TOKEN = getConfig('UPTOBOX_TOKEN')
 except KeyError:
     logging.warning('UPTOBOX_TOKEN not provided!')
@@ -237,11 +247,6 @@ try:
 except KeyError:
     INDEX_URL = None
     INDEX_URLS.append(None)
-try:
-    HEROKU_APP_NAME = getConfig('HEROKU_APP_NAME')
-except KeyError:
-    logging.warning('HEROKU APP NAME not provided!')
-    HEROKU_APP_NAME = None
 try:
     TORRENT_DIRECT_LIMIT = getConfig('TORRENT_DIRECT_LIMIT')
     if len(TORRENT_DIRECT_LIMIT) == 0:
