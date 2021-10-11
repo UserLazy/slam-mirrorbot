@@ -40,4 +40,3 @@ urllib3
 youtube_search
 youtube-search-python
 youtube_dl
-youtube-dl==2021.6.6
