@@ -238,6 +238,11 @@ except KeyError:
     INDEX_URL = None
     INDEX_URLS.append(None)
 try:
+    HEROKU_APP_NAME = getConfig('HEROKU_APP_NAME')
+except KeyError:
+    logging.warning('HEROKU APP NAME not provided!')
+    HEROKU_APP_NAME = None
+try:
     TORRENT_DIRECT_LIMIT = getConfig('TORRENT_DIRECT_LIMIT')
     if len(TORRENT_DIRECT_LIMIT) == 0:
         TORRENT_DIRECT_LIMIT = None
