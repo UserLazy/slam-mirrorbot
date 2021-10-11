@@ -13,7 +13,7 @@ from bot.helper.last_online_hlpr import last_online
 async def who_is(client, message):
     """ extract user information """
     status_message = await message.reply_text(
-        "🤔😳😳🙄"
+        "🔍 Info sedang di salin , mohon tunggu"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
@@ -31,12 +31,12 @@ async def who_is(client, message):
     username = from_user.username or ""
     
     message_out_str = (
-        "<b>Name:</b> "
+        "<b>👤 Name :</b> "
         f"<a href='tg://user?id={from_user.id}'>{first_name}</a>\n"
         f"<b>Suffix:</b> {last_name}\n"
-        f"<b>Username:</b> @{username}\n"
-        f"<b>User ID:</b> <code>{from_user.id}</code>\n"
-        f"<b>User Link:</b> {from_user.mention}\n" if from_user.username else ""
+        f"<b>✅ Username :</b> @{username}\n"
+        f"<b>🌐 User ID :</b> <code>{from_user.id}</code>\n"
+        f"<b>📍 User Link :</b> {from_user.mention}\n" if from_user.username else ""
         f"<b>Is Deleted:</b> True\n" if from_user.is_deleted else ""
         f"<b>Is Verified:</b> True" if from_user.is_verified else ""
         f"<b>Is Scam:</b> True" if from_user.is_scam else ""
@@ -51,7 +51,7 @@ async def who_is(client, message):
                 chat_member_p.joined_date or time.time()
             ).strftime("%Y.%m.%d %H:%M:%S")
             message_out_str += (
-                "<b>Joined on:</b> <code>"
+                "<b>🛡 Joined on :</b> <code>"
                 f"{joined_date}"
                 "</code>\n"
             )
