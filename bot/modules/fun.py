@@ -95,10 +95,6 @@ def funhelp(update, context):
  ➻ `/toss`*:* Tosses A coin
  ➻ `/roll`*:* Roll a dice & get you a number
   ═ ═ ═ ═ ═ ═ ═ ═ ═ ═
- ✙ 🧨 *Fitur Xtra* 💠 *:*
- ➻ `/song`*:* Get song from youtube
- ➻ `/tgm`*:* Upload file to telegraph
- ➻ `/tgt`*:* Upload text to telegraph
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
