@@ -14,6 +14,7 @@ google-auth-httplib2
 google-auth-oauthlib
 gunicorn
 hachoir
+heroku3
 httpx[http2]
 js2py
 jikanpy
