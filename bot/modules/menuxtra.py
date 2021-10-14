@@ -20,6 +20,6 @@ def menuxtra(update, context):
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
-MENUXTRA_HANDLER = CommandHandler("menuxtra",menuxtra)
+ MENUXTRA_HANDLER = CommandHandler("menuxtra",menuxtra)
 
 dispatcher.add_handler(MENUXTRA_HANDLER)
