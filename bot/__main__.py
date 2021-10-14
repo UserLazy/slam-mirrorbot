@@ -6,9 +6,6 @@ import asyncio
 from pyrogram import idle
 from sys import executable
 from sys import executable
-from datetime import datetime
-import pytz
-import time
 
 from telegram import ParseMode
 from telegram.ext import CommandHandler
@@ -23,11 +20,9 @@ from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from .modules import authorize, animequotes, ban, cancel_mirror, clone, count, delete, fun, eval, list, leech_settings, jav, jav_strings, mediainfo, menuxtra, mirror, mirror_status, nsfw, nsfwhelp, nhentai, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, whois
 
-now=datetime.now(pytz.timezone('Asia/Jakarta'))
 
 def stats(update, context):
     currentTime = get_readable_time(time.time() - botStartTime)
-    current = now.strftime('%Y/%m/%d %I:%M:%S %p')
     total, used, free = shutil.disk_usage('.')
     total = get_readable_file_size(total)
     used = get_readable_file_size(used)
