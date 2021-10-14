@@ -41,7 +41,7 @@ async def tgm(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f"**Diunggah ke Telegraph!\n🖼️ https://telegra.ph{response[0]}**",
+            f"**link : **[telegraph](https://telegra.ph{response[0]})",
             disable_web_page_preview=True,
         )
     finally:
@@ -60,7 +60,7 @@ async def tgt(_, message: Message):
     page_name = message.text.split(None, 1)[1]
     page = telegraph.create_page(page_name, html_content=reply.text.html)
     return await message.reply(
-        f"**Diunggah ke Telegraph!\n📝** {page['url']}",
+        f"**link : **[telegraph]({page['url']})",
         disable_web_page_preview=True,
     )
         
