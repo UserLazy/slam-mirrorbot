@@ -186,15 +186,17 @@ help_string = f'''
 
 /{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
 
-/weebhelp: Bantuan untuk anime, manga & character.
+/weebhelp   : Bantuan untuk anime, manga & character.
 
-/nfswhelp: Dapatkan menu 18+
+/nfswhelp   : Dapatkan menu 18+.
 
-/funyhelp: Get fun help.
+/funyhelp   : Dapatkan menu kesenangan.
 
-/stickerhelp: Bantuan Untuk module stickers.
+/xtramenu   : Dapatkan menu xtra.
 
-/weebify: Dapatkan text font weebify.
+/stickerhelp    : Bantuan Untuk module stickers.
+
+/weebify    : Dapatkan text font weebify.
 '''
 
 def bot_help(update, context):
