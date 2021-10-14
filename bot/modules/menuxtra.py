@@ -1,6 +1,6 @@
 import textwrap
 
-from telegram import Update, Parse
+from telegram import Update, ParseMode
 from telegram.ext import CallbackContext
 
 from bot import dispatcher
