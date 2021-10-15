@@ -24,4 +24,4 @@ def menuxtrahelp(update, context):
 
 MENUXTRAHELP_HANDLER = CommandHandler("menuxtrahelp", menuxtrahelp)
 
-dispatcher.add_handler(MENUXTRA_HANDLER)
+dispatcher.add_handler(MENUXTRAHELP_HANDLER)
