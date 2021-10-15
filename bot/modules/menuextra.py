@@ -8,15 +8,15 @@ from bot import dispatcher
 
 def menuextrahelp(update, context):
     help_string = '''
-  ✙ *𝐄𝐱𝐭𝐫𝐚* ☠️ *:*
- ➻ `/song`*:* Get song from youtube
- ➻ `/tgm`*:* Upload file to telegraph
- ➻ `/tgt`*:* Upload text to telegraph
- ➻ `/whois`*:* get info from user
- ➻ `/webss`*:* Upload screenshot from web
- ➻ `/tts`*:* Convert text to voice
- ➻ `/tl`*:* Use /tl [LANGUAGE_CODE]
- ➻ `/ban`*:* Ban user in Group
+   ✙ 🧨 *Menu Xtra* 💠 *:*
+ ➻ /song:Dapatkan lagu dari youtube
+ ➻ /tgm:Upload file ke telegraph
+ ➻ /tgt:Upload text ke telegraph
+ ➻ /whois:Dapatkan info dari pengguna
+ ➻ /tts:Ubah text ke suara
+ ➻ /tl:Use /tl LANGUAGE_CODE
+ ➻ /ban:Ban pengguna dari grup
+ ➻ /jav:Dapatkan Gambar JAV idol
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/6b6d2675626aa90f67bce.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
