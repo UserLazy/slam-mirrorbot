@@ -193,7 +193,7 @@ help_string = f'''
 
 /funyhelp   : Dapatkan menu kesenangan.
 
-/menuxtra   : Dapatkan menu xtra.
+/menuxtrahelp   : Dapatkan menu xtra.
 
 /stickerhelp    : Bantuan Untuk module stickers.
 
