@@ -22,6 +22,6 @@ def menuxtrahelp(update, context):
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
-MENUXTRAHELP_HANDLER = CommandHandler("menuxtra", menuxtra)
+MENUXTRAHELP_HANDLER = CommandHandler("menuxtrahelp", menuxtrahelp)
 
 dispatcher.add_handler(MENUXTRA_HANDLER)
