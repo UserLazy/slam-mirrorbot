@@ -18,7 +18,7 @@ def menuextrahelp(update, context):
  ➻ /ban:Ban pengguna dari grup
  ➻ /jav:Dapatkan Gambar JAV idol
  '''
-    update.effective_message.reply_photo("https://telegra.ph/file/6b6d2675626aa90f67bce.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
 
 MENUEXTRAHELP_HANDLER = CommandHandler("menuextrahelp", menuextrahelp)
