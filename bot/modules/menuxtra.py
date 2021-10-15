@@ -7,7 +7,7 @@ from telegram.ext import CallbackContext, CommandHandler
 from bot import dispatcher
 
 
-def menuxtrahelp(update, context):
+def menuxtra(update, context):
     help_string = '''
   ✙ 🧨 *Menu Xtra* 💠 *:*
  ➻ /song: Dapatkan lagu dari youtube
@@ -20,8 +20,9 @@ def menuxtrahelp(update, context):
  ➻ /jav: Dapatkan Gambar jav idol
   ═ ═ ═ ═ ═ ═ ═ ═ ═ ═
  '''
+    
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
-MENUXTRAHELP_HANDLER = CommandHandler("menuxtrahelp", menuxtrahelp)
+MENUXTRA_HANDLER = CommandHandler("menuxtra", menuxtra)
 
-dispatcher.add_handler(MENUXTRAHELP_HANDLER)
+dispatcher.add_handler(MENUXTRA_HANDLER)
