@@ -18,7 +18,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, animequotes, ban, cancel_mirror, clone, count, delete, fun, eval, list, leech_settings, jav, jav_strings, mediainfo, menuxtra, mirror, mirror_status, nsfw, nsfwhelp, nhentai, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, whois
+from .modules import authorize, animequotes, ban, cancel_mirror, clone, count, delete, fun, eval, list, leech_settings, jav, jav_strings, mediainfo, menuextra, mirror, mirror_status, nsfw, nsfwhelp, nhentai, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, whois
 
 
 def stats(update, context):
@@ -193,7 +193,7 @@ help_string = f'''
 
 /funyhelp   : Dapatkan menu kesenangan.
 
-/menuxtrahelp   : Dapatkan menu xtra.
+/menuextra   : Dapatkan menu xtra.
 
 /stickerhelp    : Bantuan Untuk module stickers.
 
