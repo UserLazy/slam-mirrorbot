@@ -94,6 +94,15 @@ def funhelp(update, context):
  ➻ `/decide`*:* Randomly answers yes/no/maybe/idk
  ➻ `/toss`*:* Tosses A coin
  ➻ `/roll`*:* Roll a dice & get you a number
+ ✙ 🧨 *Menu Xtra* 💠 *:*
+ ➻ /song:Dapatkan lagu dari youtube
+ ➻ /tgm:Upload file ke telegraph
+ ➻ /tgt:Upload text ke telegraph
+ ➻ /whois:Dapatkan info dari pengguna
+ ➻ /tts:Ubah text ke suara
+ ➻ /tl:Use /tl LANGUAGE_CODE
+ ➻ /ban:Ban pengguna dari grup
+ ➻ /jav:Dapatkan Gambar JAV idol
   ═ ═ ═ ═ ═ ═ ═ ═ ═ ═
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
