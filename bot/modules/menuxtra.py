@@ -7,7 +7,7 @@ from telegram.ext import CallbackContext, CommandHandler
 from bot import dispatcher
 
 
-def menuxtra(update, context):
+def menuxtrahelp(update, context):
     help_string = '''
   ✙ 🧨 *Menu Xtra* 💠 *:*
  ➻ /song: Dapatkan lagu dari youtube
