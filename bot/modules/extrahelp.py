@@ -6,7 +6,7 @@ from telegram.ext import CallbackContext, CommandHandler
 
 from bot import dispatcher
 
-def menuextrahelp(update, context):
+def extrahelp(update, context):
     help_string = '''
    ✙ 🧨 *Menu Xtra* 💠 *:*
  ➻ /song:Dapatkan lagu dari youtube
@@ -21,6 +21,6 @@ def menuextrahelp(update, context):
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
 
-MENUEXTRAHELP_HANDLER = CommandHandler("menuextrahelp", menuextrahelp)
+EXTRAHELP_HANDLER = CommandHandler("extrahelp", menuextrahelp)
 
-dispatcher.add_handler(MENUEXTRAHELP_HANDLER)
+dispatcher.add_handler(EXTRAHELP_HANDLER)
