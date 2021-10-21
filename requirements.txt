@@ -33,6 +33,7 @@ python-telegram-bot
 qbittorrent-api
 requests
 speedtest-cli
+textwrap3 0.9.2
 telegraph
 tenacity
 TgCrypto
