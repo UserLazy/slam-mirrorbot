@@ -1,5 +1,5 @@
 ```diff 
-- [ DEAD REPO AND NO MORE UPDATE ]
+- [ MAYBE UPDATE & ADD MORE MODULE ]
 ```
 [![Bagas Mirror&Leech Bot](https://telegra.ph/file/1d77962382170772a14d1.jpg)](https://t.me/sepmirrorleech21_bot)
 
@@ -10,7 +10,7 @@
 ![GitHub watchers](https://img.shields.io/github/watchers/breakdowns/slam-mirrorbot)
 ![Docker Pulls](https://img.shields.io/docker/pulls/breakdowns/mega-sdk-python?label=Docker%20Pull)
 
-**Slam Mirror Bot** is a _multipurpose_ Telegram Bot written in Python for mirroring files on the Internet to our beloved Google Drive. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
+**Bagas Mirror&Leech Bot** is a _multipurpose_ Telegram Bot written in Python for mirroring files on the Internet to our beloved Google Drive. Based on [python-aria-mirror-bot](https://github.com/lzzy12/python-aria-mirror-bot)
 
 # Features:
 <details>
