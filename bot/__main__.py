@@ -5,7 +5,8 @@ import asyncio
 
 from pyrogram import idle
 from sys import executable
-from sys import executable
+from datetime import datetime
+from pytz import timezone
 
 from telegram import ParseMode
 from telegram.ext import CommandHandler
@@ -20,6 +21,15 @@ from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from .modules import authorize, animequotes, ban, cancel_mirror, clone, count, delete, fun, eval, extrahelp, list, leech_settings, jav, jav_strings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, whois
 
+format = "%Y %H:%M:%S"
+
+# Current time in UTC
+now_utc = datetime.now(timezone('UTC'))
+print(now_utc.strftime(format))
+
+# Convert to Asia/Jakarta time zone
+now_asia = now_utc.astimezone(timezone('Asia/Jakarta'))
+print(now_asia.strftime(format))
 
 def stats(update, context):
     currentTime = get_readable_time(time.time() - botStartTime)
@@ -233,6 +243,7 @@ botcmds = [
 '''
 
 def main():
+    current = now_asia.strftime(format)
     fs_utils.start_cleanup()
     if IS_VPS:
         asyncio.get_event_loop().run_until_complete(start_server_async(PORT))
@@ -240,7 +251,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
+        bot.edit_message_text(f'🟢 Server Menyala! Semua proses dibatalkan. {current}', chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
