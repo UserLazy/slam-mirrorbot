@@ -6,14 +6,14 @@ from pyrogram.types import Message
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
 
-@app.on_message(filters.command(['waifu']))
+@app.on_message(filters.command(['wife']))
 async def waifu(c: Client, m: Message):
 
      http = httpx.AsyncClient(http2=True)
      r = await http.get("https://api.waifu.pics/sfw/waifu")
      rj = r.json()
 
-     await m.reply_photo(rj["url"], caption=f"ini waifumu")
+     await m.reply_photo(rj["url"], caption=f"Ini waifumu 😉")
 
 
 WIFE_HANDLER = CommandHandler("wife", waifu)
