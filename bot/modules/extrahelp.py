@@ -21,8 +21,6 @@ def extrahelp(update, context):
  ➻ /jav: Get jav idol image
  ➻ /cat: Get cat image
  '''
-    update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
-
 
 EXTRAHELP_HANDLER = CommandHandler("extrahelp", extrahelp)
 
