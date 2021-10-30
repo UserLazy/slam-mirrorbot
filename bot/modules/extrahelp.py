@@ -1,9 +1,9 @@
 import textwrap
+import request
 
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
-from bot import request
 from bot import dispatcher
 
 def extrahelp(update, context):
