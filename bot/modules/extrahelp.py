@@ -1,5 +1,5 @@
 import textwrap
-import request
+import requests
 
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler
