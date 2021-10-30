@@ -76,7 +76,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
+    restart_message = sendMessage("🟡 Restarting, Please wait!", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     with open(".restartmsg", "w") as f:
         f.truncate(0)
@@ -197,7 +197,7 @@ help_string = f'''
 
 /{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
 
-/extrahelp  : Dapatkan menu extra.
+/menuextra  : Dapatkan menu extra.
 /weebhelp   : Bantuan untuk anime, manga & character.
 /funyhelp   : Dapatkan menu kesenangan.
 
