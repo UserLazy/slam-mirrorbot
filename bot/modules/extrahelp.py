@@ -3,7 +3,6 @@ import textwrap
 from telegram import Update, ParseMode
 from telegram.ext import CallbackContext, CommandHandler
 
-
 from bot import dispatcher
 
 def extrahelp(update, context):
