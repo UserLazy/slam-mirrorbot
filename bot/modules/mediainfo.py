@@ -53,4 +53,4 @@ async def mediainfo(client, message):
     text_ = media_type.split(".")[-1].upper()
     link = post_to_telegraph(title, body_text)
     markup = InlineKeyboardMarkup([[InlineKeyboardButton(text=text_, url=link)]])
-    await process.edit_text("ℹ️ <b>MediaInfo By @sepmirrorleech21_bot</b>\n\n Request : @{message.from_user.username}</b>", reply_markup=markup)
+    await process.edit_text(f"<b>🤖 MediaInfo By @sepmirrorleech21_bot\n\n Request : @{message.from_user.username}</b>", reply_markup=markup)
