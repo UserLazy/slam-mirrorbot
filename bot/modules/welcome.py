@@ -32,4 +32,4 @@ async def goodbye(bot,message):
 
 	chatid= message.chat.id
 
-	await bot.send_message(text=f"<b> Hati-hati di jalan,titip gorengan & es teh\n\n, {message.from_user.mention} ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
+	await bot.send_message(text=f"<b> Hati-hati di jalan,titip gorengan & es teh\n\n {message.from_user.mention} ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
