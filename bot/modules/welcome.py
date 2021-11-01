@@ -26,7 +26,10 @@ async def welcome(bot,message):
 
     )
 
-	await bot.send_message(text=f"<b> Hai,Apa Kabar? {message.from_user.mention}\n\n Your ID : <code>{message.from_user.id}</code>\n\n 👥 Selamat Datang Di Grup , Klik /rules u/ melihat peraturan grup {message.chat.title}\n\n Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
+	await bot.send_message(text=f"<b> Hai,Apa Kabar? {message.from_user.mention}\n\n 
+	await bot.send_message(text=f"<b> Your ID : <code>{message.from_user.id}</code>\n\n
+	await bot.send_message(text=f"<b> 👥 Selamat Datang Di Grup , Klik /rules untuk melihat peraturan grup {message.chat.title}\n\n
+	await bot.send_message(text=f"<b> Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
 
 	
 
