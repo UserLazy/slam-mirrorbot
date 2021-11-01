@@ -31,8 +31,8 @@ async def who_is(client, message):
     else:
         message_out_str = ""
         message_out_str += f"<b>🔍 User ID :</b> <code>{from_user.id}</code>\n"
-        message_out_str += f"<b>👾 User Name :</b> @{username}\n\n"
         username = from_user.username or "<b>None</b>"
+        message_out_str += f"<b>👾 User Name :</b> @{username}\n\n"
         message_out_str += f"<b>👤 First Name :</b> {from_user.first_name}\n"
         last_name = from_user.last_name or "<b>None</b>"
         message_out_str += f"<b>✅ Last Name :</b> {last_name}\n\n"
