@@ -28,7 +28,7 @@ async def who_is(client, message):
         return
     if from_user is None:
         await status_message.edit("no valid user_id / message specified")
-       else:
+    else:
         message_out_str = ""
         message_out_str += f"<b>👤 First Name :</b> {from_user.first_name}\n"
         last_name = from_user.last_name or "<b>None</b>"
