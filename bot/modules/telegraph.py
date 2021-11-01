@@ -42,7 +42,7 @@ async def tgm(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f"**link : **[telegraph](https://telegra.ph{response[0]})",
+            f" : **[telegraph](https://telegra.ph{response[0]})",
             disable_web_page_preview=False,
         )
     finally:
@@ -51,17 +51,10 @@ async def tgm(client, message):
 @app.on_message(filters.command(['telegraph']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
-
-    if not reply or not reply.text:
-        return await message.reply("Balas ke pesan teks😌")
-
-    if len(message.command) < 2:
-        return await message.reply("**😑Gunakan:**\n /tgt [judul teks]")
-
     page_name = message.text.split(None, 1)[1]
     page = telegraph.create_page(page_name, html_content=reply.text.html)
     return await message.reply(
-        f"**link : **[Here Your Telegra.ph Link!]({page['url']})",
+        f" : **[Here Your Telegra.ph Link!]({page['url']})",
         disable_web_page_preview=True,
     )
         
