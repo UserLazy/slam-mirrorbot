@@ -8,7 +8,7 @@ from telegraph import upload_file
 from bot import app, dispatcher, telegraph
 from telegram.ext import CommandHandler
 
-@app.on_message(filters.command(['tgm']))
+@app.on_message(filters.command(['telegraph']))
 async def tgm(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -48,7 +48,7 @@ async def tgm(client, message):
     finally:
         os.remove(download_location)
 
-@app.on_message(filters.command(['tgt']))
+@app.on_message(filters.command(['telegraph']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
 
