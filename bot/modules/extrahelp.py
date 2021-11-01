@@ -10,7 +10,8 @@ def extrahelp(update, context):
     help_string = '''
   ✙ 📛 *𝐄𝐱𝐭𝐫𝐚* 📛 *:*
  ➻ `/song`*:* Get song from youtube
- ➻ `/telegraph`*:* Upload File&Text to telegraph
+ ➻ `/telegraph`*:* Upload File to Telegraph
+ ➻ `/text`*:* Upload Text to Telegraph
  ➻ `/whois`*:* get info from user
  ➻ `/webss`*:* Upload screenshot from web
  ➻ `/tts`*:* Convert text to voice
