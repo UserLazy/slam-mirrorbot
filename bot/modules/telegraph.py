@@ -42,13 +42,13 @@ async def tgm(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f"[telegraph](https://telegra.ph{response[0]})",
+            f"[Here Your Telegra.ph Link!](https://telegra.ph{response[0]})",
             disable_web_page_preview=False,
         )
     finally:
         os.remove(download_location)
 
-@app.on_message(filters.command(['telegraph']))
+@app.on_message(filters.command(['text']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
     
@@ -65,7 +65,7 @@ async def tgt(_, message: Message):
         
         
 TELEGRAPH_HANDLER = CommandHandler("telegraph", tgm)
-TELEGRAPH_HANDLER = CommandHandler("telegraph", tgt)
+TEXT_HANDLER = CommandHandler("text", tgt)
 
 dispatcher.add_handler(TELEGRAPH_HANDLER)
-dispatcher.add_handler(TELEGRAPH_HANDLER)
+dispatcher.add_handler(TEXT_HANDLER)
