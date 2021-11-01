@@ -42,7 +42,7 @@ async def tgm(client, message):
         await message.reply(message, text=document)
     else:
         await message.reply(
-            f" : **[telegraph](https://telegra.ph{response[0]})",
+            f"[telegraph](https://telegra.ph{response[0]})",
             disable_web_page_preview=False,
         )
     finally:
@@ -51,16 +51,21 @@ async def tgm(client, message):
 @app.on_message(filters.command(['telegraph']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
+    
+    if not reply or not reply.text:
+       return await message.reply("Balas ke pesan teks")
+
+    page_name = f"🤖 Bot Sep 21 Publik - [No Bokep]"
     page_name = message.text.split(None, 1)[1]
     page = telegraph.create_page(page_name, html_content=reply.text.html)
     return await message.reply(
-        f" : **[Here Your Telegra.ph Link!]({page['url']})",
+        f"[Here Your Telegra.ph Link!]({page['url']})",
         disable_web_page_preview=True,
     )
         
         
-TGM_HANDLER = CommandHandler("tgm", tgm)
-TGT_HANDLER = CommandHandler("tgt", tgt)
+TELEGRAPH_HANDLER = CommandHandler("telegraph", tgm)
+TELEGRAPH_HANDLER = CommandHandler("telegraph", tgt)
 
-dispatcher.add_handler(TGM_HANDLER)
-dispatcher.add_handler(TGT_HANDLER)
+dispatcher.add_handler(TELEGRAPH_HANDLER)
+dispatcher.add_handler(TELEGRAPH_HANDLER)
