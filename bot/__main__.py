@@ -21,7 +21,7 @@ from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
 from .modules import authorize, anime, animequotes, ban, cancel_mirror, cat, clone, count, delete, fun, eval, extrahelp, list, leech_settings, jav, jav_strings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, paste, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, wife, weebify, whois
 
-format = "%Y %H:%M:%S"
+format = %d %b %Y at %I:%M %p"
 
 # Current time in UTC
 now_utc = datetime.now(timezone('UTC'))
@@ -42,8 +42,9 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>💻 Waktu Aktif Bot ⏱ :</b> <code>{currentTime}</code>\n' \
+    stats = f'<b>💻 Durasi Bot Aktif ⏱ :</b> <code>{currentTime}</code>\n' \
             f'<b>🖥 Total Kapasitas Disk 🖥 :</b> <code>{total}</code>\n' \
+            f'<b>🌐 Aktif Sejak 📶 :{current}</b>\n' \
             f'<b>💿 Penggunaan :</b> <code>{used}</code>\n' \
             f'<b>💾 Sisa :</b> <code>{free}</code>\n\n' \
             f'<b>🔺 Upload  :</b> <code>{sent}</code>\n' \
@@ -76,7 +77,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 
 def restart(update, context):
-    restart_message = sendMessage("🟡 Restarting, Please wait!", context.bot, update)
+    restart_message = sendMessage("🟡 Bot sedang di restart,mohon tunggu!", context.bot, update)
     # Save restart message object in order to reply to it after restarting
     with open(".restartmsg", "w") as f:
         f.truncate(0)
@@ -251,7 +252,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text(f'🟢 Server Menyala! Semua proses dibatalkan. {current}', chat_id, msg_id)
+        bot.edit_message_text(f'🟢 Bot Menyala!,Semua proses dibatalkan. ⛔️ {current}', chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
