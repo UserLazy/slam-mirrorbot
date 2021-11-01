@@ -48,7 +48,7 @@ async def tgm(client, message):
     finally:
         os.remove(download_location)
 
-@app.on_message(filters.command(['text']))
+@app.on_message(filters.command(['tgt']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
     
