@@ -26,7 +26,7 @@ async def ban(bot, message):
                 try:
                     await bot.kick_chat_member(chat_id=chatid, user_id=user_to_ban)
                     await message.reply_text(
-                         f"<b>Banned User {message.reply_to_message.from_user.mention}</b>\n <b>UserID</b>: <code>{message.from_user.id}</code>"
+                         f"<b>Banned User {message.reply_to_message.from_user.mention}</b>\n\n <b>UserID</b>: <code>{message.from_user.id}</code>"
                     )
                 except Exception as error:
                     await message.reply_text(f"{error}")
@@ -74,7 +74,7 @@ async def unban(bot, message):
 
                     await message.reply_text(
 
-                        f"<b>Unbanned User {message.reply_to_message.from_user.mention}</b>\n <b>UserID</b>: <code>{message.from_user.id}</code>"
+                        f"<b>Unbanned User {message.reply_to_message.from_user.mention}</b>\n\n <b>UserID</b>: <code>{message.from_user.id}</code>"
 
                     )
 
