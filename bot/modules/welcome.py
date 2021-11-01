@@ -7,9 +7,6 @@ from pyrogram.types import Message, User, InlineKeyboardButton, InlineKeyboardMa
 from bot import app
 
 
-
-
-
 @app.on_message(filters.new_chat_members)
 
 async def welcome(bot,message):
