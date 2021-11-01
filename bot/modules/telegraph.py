@@ -43,7 +43,7 @@ async def tgm(client, message):
     else:
         await message.reply(
             f"**link : **[telegraph](https://telegra.ph{response[0]})",
-            disable_web_page_preview=True,
+            disable_web_page_preview=False,
         )
     finally:
         os.remove(download_location)
@@ -61,7 +61,7 @@ async def tgt(_, message: Message):
     page_name = message.text.split(None, 1)[1]
     page = telegraph.create_page(page_name, html_content=reply.text.html)
     return await message.reply(
-        f"**link : **[telegraph]({page['url']})",
+        f"**link : **[Here Your Telegra.ph Link!]({page['url']})",
         disable_web_page_preview=True,
     )
         
