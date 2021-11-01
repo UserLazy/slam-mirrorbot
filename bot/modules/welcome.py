@@ -27,9 +27,9 @@ async def welcome(bot,message):
     )
 
 	await bot.send_message(text=f"1<b> Hai,Apa Kabar? {message.from_user.mention}\n\n 
-	await bot.send_message(text=f"2<b> Your ID : <code>{message.from_user.id}</code>\n\n
-	await bot.send_message(text=f"3<b> 👥 Selamat Datang Di Grup , Klik /rules untuk melihat peraturan grup {message.chat.title}\n\n
-	await bot.send_message(text=f"4<b> Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
+	(text=f"2<b> Your ID : <code>{message.from_user.id}</code>\n\n
+	(text=f"3<b> 👥 Selamat Datang Di Grup , Klik /rules untuk melihat peraturan grup {message.chat.title}\n\n
+	(text=f"4<b> Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
 
 	
 
@@ -40,4 +40,4 @@ async def goodbye(bot,message):
 	chatid= message.chat.id
 
 	await bot.send_message(text=f"1<b> Hati-hati di jalan,titip gorengan & es teh\n\n {message.from_user.mention}\n\n 
-	await bot.send_message(text=f"2<b> ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
+	(text=f"2<b> ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
