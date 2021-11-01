@@ -8,7 +8,7 @@ from telegraph import upload_file
 from bot import app, dispatcher, telegraph
 from telegram.ext import CommandHandler
 
-@app.on_message(filters.command(['telegraph']))
+@app.on_message(filters.command(['tgm']))
 async def tgm(client, message):
     replied = message.reply_to_message
     if not replied:
@@ -64,8 +64,8 @@ async def tgt(_, message: Message):
     )
         
         
-TELEGRAPH_HANDLER = CommandHandler("telegraph", tgm)
-TEXT_HANDLER = CommandHandler("text", tgt)
+TGM_HANDLER = CommandHandler("tgm", tgm)
+TGT_HANDLER = CommandHandler("tgt", tgt)
 
-dispatcher.add_handler(TELEGRAPH_HANDLER)
-dispatcher.add_handler(TEXT_HANDLER)
+dispatcher.add_handler(TGM_HANDLER)
+dispatcher.add_handler(TGT_HANDLER)
