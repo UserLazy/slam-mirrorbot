@@ -34,6 +34,7 @@ print(now_asia.strftime(format))
 def stats(update, context):
     currentTime = get_readable_time(time.time() - botStartTime)
     total, used, free = shutil.disk_usage('.')
+    current = now_asia.strftime(format)
     total = get_readable_file_size(total)
     used = get_readable_file_size(used)
     free = get_readable_file_size(free)
@@ -44,6 +45,7 @@ def stats(update, context):
     disk = psutil.disk_usage('/').percent
     stats = f'<b>💻 Durasi Bot Aktif ⏱ :</b> <code>{currentTime}</code>\n' \
             f'<b>🖥 Total Kapasitas Disk 🖥 :</b> <code>{total}</code>\n' \
+            f'<b>🌐 Aktif Sejak 📶 :{current}</b>\n' \
             f'<b>💿 Penggunaan :</b> <code>{used}</code>\n' \
             f'<b>💾 Sisa :</b> <code>{free}</code>\n\n' \
             f'<b>🔺 Upload  :</b> <code>{sent}</code>\n' \
