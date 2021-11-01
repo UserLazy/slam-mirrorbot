@@ -23,10 +23,10 @@ async def welcome(bot,message):
 
     )
 
-	await bot.send_message(text=f" <b> Hai,Apa Kabar? {message.from_user.mention}\n\n, 
-            			       <b> Your ID : <code>{message.from_user.id}</code>\n\n,
-                                       <b> 👥 Selamat Datang Di Grup , Klik /rules untuk melihat peraturan grup {message.chat.title}\n\n,
-                                       <b> Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
+	await bot.send_message(text=f"<b> Hai,Apa Kabar? {message.from_user.mention}\n\n, 
+            			      <b> Your ID : <code>{message.from_user.id}</code>\n\n,
+                                      <b> 👥 Selamat Datang Di Grup , Klik /rules untuk melihat peraturan grup {message.chat.title}\n\n,
+                                      <b> Klik /help untuk menampilkan menu perintah</b>", chat_id=chatid, reply_markup=markup)
 
 
 @app.on_message(filters.left_chat_member)
@@ -35,5 +35,5 @@ async def goodbye(bot,message):
 
 	chatid= message.chat.id
 
-	await bot.send_message(text=f" <b> Hati-hati di jalan,titip gorengan & es teh\n\n {message.from_user.mention}\n\n,
-				       <b> ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
+	await bot.send_message(text=f"<b> Hati-hati di jalan,titip gorengan & es teh\n\n {message.from_user.mention}\n\n,
+				      <b> ⏰ Jangan balik lagi 🧨</b>", chat_id=chatid)
