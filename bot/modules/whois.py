@@ -16,7 +16,7 @@ async def who_is(client, message):
     status_message = await message.reply_text(
         "🔍 Info sedang di salin , mohon tunggu"
     )
-     await status_message.edit(
+    await status_message.edit(
         "`Processing user info...`"
     )
     from_user = None
