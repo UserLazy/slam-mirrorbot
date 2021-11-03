@@ -65,7 +65,7 @@ async def who_is(client, message):
              button = [[
                  InlineKeyboardButton('❌ Tutup', callback_data='close'),
                  InlineKeyboardButton('↪️ Kirim pesan', url=link)
-                 ]]
+            ]]
             reply_markup = InlineKeyboardMarkup(button)
 
             await message.reply_photo(
