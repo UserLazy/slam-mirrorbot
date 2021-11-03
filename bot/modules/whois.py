@@ -1,12 +1,9 @@
 import os
-
 from pyrogram import Client, filters
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from bot.helper.extract_user import extract_user
 from bot.helper.last_online_hlpr import last_online
-
 import time
-
 from datetime import datetime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, User
 from bot import app, dispatcher
