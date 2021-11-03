@@ -8,7 +8,7 @@ from bot import app
 
 
             
-@app.on_message(filters.command(["omdb"]))
+@app.on_message(filters.command(["movie"]))
 async def imdbcmd(client, message):
     movie_name = message.text.split(" ", 1)[1]
     movie_info = get_movie_info(movie_name)
