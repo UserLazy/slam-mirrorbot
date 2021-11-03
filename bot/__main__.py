@@ -19,7 +19,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper import button_build
-from .modules import authorize, anime, animequotes, ban, cancel_mirror, cat, clone, count, delete, fun, eval, extrahelp, github, ids, list, leech_settings, jav, jav_strings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, paste, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, welcome, wife, whois
+from .modules import authorize, anime, animequotes, ban, cancel_mirror, cat, clone, count, delete, fun, eval, extrahelp, github, ids, list, leech_settings, movie, jav, jav_strings, mediainfo, mirror, mirror_status, nsfw, nsfwhelp, nhentai, paste, shell, speedtest, stickers, sitesearch, songs, telegraph, text, tts, trt, torrent_search, usage, watch, weebify, welcome, wife, whois
 
 format = "%d %b %Y at %I:%M %p"
 
@@ -101,31 +101,31 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
-<b>/{BotCommands.HelpCommand}</b>: To get help menu for this bot (Sorry I Use Indonesian Language)
+<b>/{BotCommands.HelpCommand}</b>: To get this message
 <br><br>
-<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring tautan ke Google Drive.
+<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
 <br><br>
-<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & upload versi unduhan (.tar) dari unduhan
+<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
 <br><br>
-<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring & upload versi arsip (.zip) dari unduhan
+<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.zip) version of the download
 <br><br>
-<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Mulai mirroring file yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
+<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
 <br><br>
-<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Mulai Mencerminkan menggunakan qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum mengunduh
+<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
 <br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & upload versi unduhan (.tar) dari unduhan
+<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.tar) version of the download
 <br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & upload versi arsip (.zip) dari unduhan
+<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.zip) version of the download
 <br><br>
-<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Mulai mirroring menggunakan qBittorrent & jika file yang diunduh yang berformat arsip (.tar/.zip) , ekstrak ke Google Drive
+<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
 <br><br>
-<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Mulai upload ke Telegram, Use <b>/{BotCommands.LeechCommand} s</b> untuk pilih file sebelum upload
+<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
 <br><br>
-<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Mulai upload ke Telegram dengan format (.tar)
+<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Start leeching to Telegram and upload it as (.tar)
 <br><br>
-<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Mulai upload ke Telegram dengan format (.zip)
+<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and upload it as (.zip)
 <br><br>
-<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Mulai mengekstrak jika formatnya (.tar / .zip), lalu menguploadnya ke Telegeram
+<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and if downloaded file is any archive, extracts it to Telegram
 <br><br>
 <b>/{BotCommands.QbLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand} s</b> to select files before leeching
 <br><br>
@@ -135,11 +135,11 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and if downloaded file is any archive, extracts it to Telegram
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Ganda file/folder ke Google Drive (Refensi jika link yang anda tuju kehabisan limit pada saat anda buka)
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
 <br><br>
-<b>/{BotCommands.CountCommand}</b> [drive_url]: Hitung file/folder Dari Link Google Drive
+<b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file Dari Google Drive Bot Ini (Only Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
 <br><br>
 <b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl. Click <b>/{BotCommands.WatchCommand}</b> for more help
 <br><br>
@@ -153,19 +153,19 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl and zip before uploading 
 <br><br>
-<b>/{BotCommands.LeechSetCommand}</b>: Pengaturan Leech
+<b>/{BotCommands.LeechSetCommand}</b>: Leech Settings 
 <br><br>
-<b>/{BotCommands.SetThumbCommand}</b>: Reply photo untuk mengatur Thumbnail
+<b>/{BotCommands.SetThumbCommand}</b>: Reply photo to set it as Thumbnail
 <br><br>
 <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
-<b>/{BotCommands.CancelAllCommand}</b>: Batalkan semua proses yang sedang berjalan
+<b>/{BotCommands.CancelAllCommand}</b>: Cancel all running tasks
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Mencari Folder/File pada Google Drive (Database Bot)
+<b>/{BotCommands.ListCommand}</b> [search term]: Searches the search term in the Google Drive, If found replies with the link
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Menampilkan Proses unduhan berjalan pada Bot
+<b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Menampilkan Waktu aktif Bot
+<b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='List Perintah Bot Sep 21 Publik',
@@ -175,38 +175,41 @@ help = Telegraph(access_token=telegraph_token).create_page(
     )["path"]
 
 help_string = f'''
-/{BotCommands.AuthorizeCommand}: Otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dilakukan oleh Pemilik & Sudo bot)
+/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
 
-/{BotCommands.PingCommand}: Periksa berapa lama waktu yang dibutuhkan untuk melakukan Ping pada Bot
+/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 
-/{BotCommands.UnAuthorizeCommand}: Batalkan otorisasi obrolan / pengguna untuk menggunakan bot (Hanya dapat dipanggil oleh Pemilik & Sudo bot)
+/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 
-/{BotCommands.AddSudoCommand}: Tambahkan pengguna Sudo (Hanya Pemilik)
+/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
 
-/{BotCommands.AuthorizedUsersCommand}: Tampilkan obrolan yang telah di Otorisasi (Hanya Pemilik & Sudo)
+/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
 
-/{BotCommands.RmSudoCommand}: Hapus pengguna Sudo (Hanya Pemilik)
+/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
 
-/{BotCommands.RestartCommand}: Mulai ulang bot
+/{BotCommands.RestartCommand}: Restart the bot
 
-/{BotCommands.LogCommand}: Dapatkan log file bot. untuk mendapatkan laporan kesalahan pada bot
+/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
 
-/{BotCommands.SpeedCommand}: Periksa Kecepatan Internet (Host)
+/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
 
 /{BotCommands.ShellCommand}: Run commands in Shell (Only Owner)
 
 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
 
-/{BotCommands.TsHelpCommand}: Bantuan untuk pencarian Torrent
+/{BotCommands.TsHelpCommand}: Get help for Torrent search module
 
-/menuextra  : Dapatkan menu extra.
-/weebhelp   : Bantuan untuk anime, manga & character.
-/funyhelp   : Dapatkan menu kesenangan.
+/menuextra  :  Get help for extra menu
 
-/nsfwhelp   : Dapatkan menu 18+.
+/weebhelp   :  Get help for search anime, manga & character.
 
-/stickerhelp : Bantuan Untuk module stickers.
-/weebify    : Dapatkan text font weebify.
+/funyhelp   :  Get help for funny menu
+
+/nsfwhelp   :  Get help for adult menu (not recommendation in group,cek rules before use)
+
+/stickerhelp : Get help for stickers module
+
+/weebify    : Get help for weebify font
 '''
 
 def bot_help(update, context):
