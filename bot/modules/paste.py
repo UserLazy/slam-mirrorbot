@@ -4,6 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
+from httpx import upload_file
 
 
 @app.on_message(filters.command(['paste']))
