@@ -65,7 +65,6 @@ async def who_is(client, message):
                 InlineKeyboardButton('↪️ Kirim pesan', url=link)
             ]]
             reply_markup = InlineKeyboardMarkup(button)
-
             await message.reply_photo(
                 photo=local_user_photo,
                 quote=True,
@@ -74,9 +73,7 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
-            
             os.remove(local_user_photo)
-            
         else:
              await message.reply_photo(
                 photo=local_user_photo,
@@ -93,7 +90,6 @@ async def who_is(client, message):
                 InlineKeyboardButton('↪️ Kirim pesan', url=link)
             ]]
             reply_markup = InlineKeyboardMarkup(button)
-
             await message.reply_text(
                 text=message_out_str,
                 quote=True,
@@ -101,14 +97,13 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
-            
            await status_message.delete()
 
 @app.on_callback_query() # callbackQuery()
 async def cbclose(bot, update):  
     if update.data == "close":
-        
         await status_message.delete()
+
         
 WHOIS_HANDLER = CommandHandler("whois", who_is)
 
