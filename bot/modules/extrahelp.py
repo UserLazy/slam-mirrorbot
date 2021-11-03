@@ -9,14 +9,15 @@ from bot import dispatcher
 def extrahelp(update, context):
     help_string = '''
   ✙ 📛 *𝐄𝐱𝐭𝐫𝐚* 📛 *:*
+ ➻ `/movie`*:* for search film informations from imdb
+ ➻ `/paste`*:* Paste text to pasty
  ➻ `/song`*:* Get song from youtube
  ➻ `/tgm`*:* Upload File to Telegraph
  ➻ `/tgt`*:* Upload Text to Telegraph
- ➻ `/whois`*:* get info from user
- ➻ `/webss`*:* Upload screenshot from web
  ➻ `/tts`*:* Convert text to voice
  ➻ `/tl`*:* Use /tl [LANGUAGE_CODE]
- ➻ `/paste`*:* Paste text to pasty
+ ➻ `/whois`*:* get info from user
+ ➻ `/webss`*:* Upload screenshot from web
  '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
