@@ -1,7 +1,7 @@
 import httpx
 
 from pyrogram import Client, filters
-from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import Message
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
 
