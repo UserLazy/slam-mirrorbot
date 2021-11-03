@@ -9,7 +9,8 @@ import time
 
 from datetime import datetime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, User
-from bot import app
+from bot import app, dispatcher
+from telegram.ext import CommandHandler
 
 @app.on_message(filters.command(['whois']))
 async def who_is(client, message):
@@ -111,3 +112,7 @@ async def cbclose(bot, update):
     if update.data == "close":
         
         await status_message.delete()
+        
+WHOIS_HANDLER = CommandHandler("whois", who_is)
+
+dispatcher.add_handler(WHOIS_HANDLER)
