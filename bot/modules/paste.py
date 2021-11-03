@@ -25,6 +25,7 @@ async def hastebin(c: Client, m: Message):
         [[
         InlineKeyboardButton('📝 Paste Link', url=url)
         ]]
+    )
     else:
         await m.reply_text("reply_to_document_or_text")
 
