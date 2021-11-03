@@ -103,8 +103,3 @@ async def cbclose(bot, update):
     if update.data == "close":
         
         await status_message.delete()
-
-
-WHOIS_HANDLER = CommandHandler("whois", who_is)
-
-dispatcher.add_handler(WHOIS_HANDLER)
