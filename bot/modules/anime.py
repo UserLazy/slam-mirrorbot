@@ -267,23 +267,23 @@ def upcoming(update: Update, context: CallbackContext):
 
 def weebhelp(update, context):
     help_string = '''
-• `/anime`*:* Cari anime
-• `/char`*:* Cari character
-• `/manga`*:* Cari manga
-• `/neko`*:* mengirim foto neko
-• `/lewd`*:* mengirim foto anu
-• `/tickle`*:* mengirim gif tickle
-• `/feed`*:* mengirim gif feed
-• `/poke`*:* mengirim gif poke
-• `/baka`*:* mengirim gif baka
-• `/bakadame`*:* Cari anime dari bakadame
-• `/kaizoku`*:* Cari anime dari kaizoku
-• `/doujindesu`*:* Cari komik++ dari doujindesu
-• `/nhentai`*:* mengirim manga dari nhentai(contoh /nhentai 205200)
-• `/hentai`*:* mengirim foto hentai
-• `/wallpaper`*:* mengirim wallpaper anime terbaik
-• `/animequotes`*:* Cari quotes anime
-• `/upcoming`*:* Melihat daftar anime baru di musim mendatang.
+• `/anime`*:* Search anime
+• `/char`*:* Search character
+• `/manga`*:* Search manga
+• `/neko`*:* Send neko photo
+• `/lewd`*:* Send adult photo
+• `/tickle`*:* Send gif tickle
+• `/feed`*:* Send gif feed
+• `/poke`*:* Send gif poke
+• `/baka`*:* Send gif baka
+• `/bakadame`*:* Search anime from bakadame
+• `/kaizoku`*:* Search anime from kaizoku
+• `/doujindesu`*:* Search komik++ from doujindesu
+• `/nhentai`*:* Send manga from nhentai(contoh /nhentai 205200)
+• `/hentai`*:* Send henatai photo
+• `/wallpaper`*:* Send best wallpaper anime
+• `/animequotes`*:* Search quotes anime
+• `/upcoming`*:* See the list of new anime in the upcoming season
 '''
     update.effective_message.reply_photo("https://telegra.ph/file/1d77962382170772a14d1.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
 
