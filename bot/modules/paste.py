@@ -22,10 +22,6 @@ async def hastebin(c: Client, m: Message):
         r = await http.post(url, data=mean.encode("UTF-8"))
         url = f"https://hastebin.com/{r.json()['key']}"
         markup = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('📝 Paste Link', url=url)
-        ]]
-    )
         await m.reply_text(url, disable_web_page_preview=False)
     else:
         await m.reply_text("reply_to_document_or_text")
