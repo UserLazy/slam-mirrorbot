@@ -9,9 +9,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
 
+
 @app.on_message(filters.command(['whois']))
 async def who_is(client, message):
-    
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
         "🔍 Info sedang di salin , mohon tunggu"
