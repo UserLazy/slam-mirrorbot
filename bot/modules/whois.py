@@ -76,6 +76,7 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
+            
             os.remove(local_user_photo)
             
         else:
@@ -102,7 +103,8 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
-        await status_message.delete()
+            
+           await status_message.delete()
 
 @app.on_callback_query() # callbackQuery()
 async def cbclose(bot, update):  
