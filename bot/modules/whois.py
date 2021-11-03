@@ -13,7 +13,7 @@ from bot import app
 
 @app.on_message(filters.command(['whois']))
 async def who_is(client, message):
-    """ extract user information """
+    
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
         "🔍 Info sedang di salin , mohon tunggu"
@@ -38,7 +38,7 @@ async def who_is(client, message):
         message_out_str += f"<b>👤 First Name :</b> {from_user.first_name}\n"
         last_name = from_user.last_name or "<b>None</b>"
         message_out_str += f"<b>✅ Last Name :</b> {last_name}\n\n"
-        message_out_str += f"<b>⏱ Last Online :</b> {from_user.last_online_date}\n\n"
+        message_out_str += f"<b>⏱ Last Online :</b> {from_user.status}\n\n"
         dc_id = from_user.dc_id or "[User Doesnt Have A Valid DP]"
         message_out_str += f"<b>🌐 Data Centre :</b> <code>{dc_id}</code>\n"
         message_out_str += f"<b>🔗 User 𝖫𝗂𝗇𝗄 :</b> <a href='tg://user?id={from_user.id}'><b>Di Sini</b></a>\n"
@@ -60,7 +60,7 @@ async def who_is(client, message):
             local_user_photo = await client.download_media(
                 message=chat_photo.big_file_id
             )
-            username = from_user.username
+            uname = from_user.username
             link = f"https://telegram.me/{uname}"
             button = [[
                 InlineKeyboardButton('❌ Tutup', callback_data='close'),
@@ -71,6 +71,7 @@ async def who_is(client, message):
             await message.reply_photo(
                 photo=local_user_photo,
                 quote=True,
+                reply_markup=reply_markup,
                 caption=message_out_str,
                 parse_mode="html",
                 disable_notification=True
@@ -86,7 +87,7 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
-            username = from_user.username
+            uname = from_user.username
             link = f"https://telegram.me/{uname}"
             button = [[
                 InlineKeyboardButton('❌ Tutup', callback_data='close'),
