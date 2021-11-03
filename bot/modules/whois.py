@@ -76,10 +76,13 @@ async def who_is(client, message):
                 disable_notification=True
             )
             os.remove(local_user_photo)
+            
         else:
-            await message.reply_text(
-                text=message_out_str,
+             await message.reply_photo(
+                photo=local_user_photo,
                 quote=True,
+                reply_markup=reply_markup,
+                caption=message_out_str,
                 parse_mode="html",
                 disable_notification=True
             )
