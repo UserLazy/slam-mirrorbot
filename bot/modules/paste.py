@@ -23,7 +23,7 @@ async def hastebin(c: Client, m: Message):
         url = f"https://hastebin.com/{r.json()['key']}"
         markup = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('📝 Paste Link', url=url)
+        InlineKeyboardButton('🔗 Paste Link ✅', url=url)
         ]]
     )
     else:
