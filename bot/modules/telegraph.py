@@ -56,7 +56,7 @@ async def tgt(_, message: Message):
        return await message.reply("Balas ke pesan teks")
 
     page_name = f"🤖 Bot Sep 21 Publik - [No Bokep]"
-    page = telegraph.create_page(page_name, html_content=reply.text.html)
+    page = telegraph.create_page(html_content=reply.text.html)
     return await message.reply(
         f"[Here Your Telegra.ph Link!]({page['url']})",
         disable_web_page_preview=True,
