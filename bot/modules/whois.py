@@ -60,7 +60,7 @@ async def who_is(client, message):
             local_user_photo = await client.download_media(
                 message=chat_photo.big_file_id
             )
-            uname = from_user.username
+            username = from_user.username
             link = f"https://telegram.me/{uname}"
             button = [[
                 InlineKeyboardButton('❌ Tutup', callback_data='close'),
@@ -86,7 +86,7 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
-            uname = from_user.username
+            username = from_user.username
             link = f"https://telegram.me/{uname}"
             button = [[
                 InlineKeyboardButton('❌ Tutup', callback_data='close'),
