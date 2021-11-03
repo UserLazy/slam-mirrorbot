@@ -26,8 +26,8 @@ async def hastebin(c: Client, m: Message):
         InlineKeyboardButton('🔗 Paste Link ✅', url=url)
         ]]
     )
-    else:
         await m.reply_photo('https://telegra.ph/file/1d77962382170772a14d1.jpg', caption=f"<b>Request Paste 👉🏻 {m.from_user.mention}\n\n Upload By 🤖 @sepmirrorleech21_bot</b> ", reply_markup=markup)
+    else:
         await m.reply_text("reply_to_document_or_text")
 
 
