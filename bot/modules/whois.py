@@ -2,7 +2,8 @@ import os
 import time
 from datetime import datetime
 from pyrogram import Client, filters
-from pyrogram.errors import UserNotParticipant
+from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, User
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
 from bot.helper.extract_user import extract_user
@@ -17,7 +18,7 @@ async def who_is(client, message):
         "🔍 Info sedang di salin , mohon tunggu"
     )
     await status_message.edit(
-        "`🌐 Proses info profil`"
+        "`🌐 Memproses mengunggah info profil`"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
@@ -58,6 +59,13 @@ async def who_is(client, message):
             local_user_photo = await client.download_media(
                 message=chat_photo.big_file_id
             )
+            uname = from_user.username
+            link = f"https://telegram.me/{uname}"
+            button = [[
+                InlineKeyboardButton('❌ Tutup', callback_data='close'),
+                InlineKeyboardButton('↪️ Kirim pesan', url=link)
+                 ]]
+            reply_markup = InlineKeyboardMarkup(button)
 
             await message.reply_photo(
                 photo=local_user_photo,
@@ -74,6 +82,27 @@ async def who_is(client, message):
                 parse_mode="html",
                 disable_notification=True
             )
+            uname = from_user.username
+            link = f"https://telegram.me/{uname}"
+            button = [[
+                InlineKeyboardButton('❌ Tutup', callback_data='close'),
+                InlineKeyboardButton('↪️ Kirim pesan', url=link)
+            ]]
+            reply_markup = InlineKeyboardMarkup(button)
+
+            await message.reply_text(
+                text=message_out_str,
+                quote=True,
+                reply_markup=reply_markup,
+                parse_mode="html",
+                disable_notification=True
+            )
+        await status_message.delete()
+
+@app.on_callback_query() # callbackQuery()
+async def cbclose(bot, update):  
+    if update.data == "close":
+        
         await status_message.delete()
 
 
