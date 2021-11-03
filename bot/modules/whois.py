@@ -75,14 +75,6 @@ async def who_is(client, message):
             )
             os.remove(local_user_photo)
         else:
-             await message.reply_photo(
-                photo=local_user_photo,
-                quote=True,
-                reply_markup=reply_markup,
-                caption=message_out_str,
-                parse_mode="html",
-                disable_notification=True
-            )
             uname = from_user.username
             link = f"https://telegram.me/{uname}"
             button = [[
