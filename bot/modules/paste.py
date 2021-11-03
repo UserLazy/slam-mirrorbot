@@ -1,10 +1,9 @@
 import httpx
 
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from bot import app, dispatcher
 from telegram.ext import CommandHandler
-from httpx import upload_file
 
 
 @app.on_message(filters.command(['paste']))
@@ -22,7 +21,10 @@ async def hastebin(c: Client, m: Message):
         url = "https://hastebin.com/documents"
         r = await http.post(url, data=mean.encode("UTF-8"))
         url = f"https://hastebin.com/{r.json()['key']}"
-        await m.reply_text(url, disable_web_page_preview=False)
+        markup = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('📝 Paste Link', url=url)
+        ]]
     else:
         await m.reply_text("reply_to_document_or_text")
 
