@@ -1,13 +1,15 @@
 import os
-import time
-from datetime import datetime
+
 from pyrogram import Client, filters
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, User
-from bot import app
 from bot.helper.extract_user import extract_user
 from bot.helper.last_online_hlpr import last_online
 
+import time
+
+from datetime import datetime
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message, User
+from bot import app
 
 @app.on_message(filters.command(['whois']))
 async def who_is(client, message):
