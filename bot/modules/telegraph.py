@@ -1,8 +1,7 @@
 import os
-import traceback
 
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from telegraph import upload_file
 
 from bot import app, dispatcher, telegraph
@@ -41,29 +40,45 @@ async def tgm(client, message):
     except Exception as document:
         await message.reply(message, text=document)
     else:
-        await message.reply(
-            f"[Here Your Telegra.ph Link!](https://telegra.ph{response[0]})",
-            disable_web_page_preview=False,
+        link = f"https://telegra.ph{response[0]})"
+        markup = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Here Your Telegra.ph Link!', url=link)
+        ]]
+    )
+        await message.reply_text(
+            text=f"<b>🗣️ Request by {message.from_user.mention}</b>",
+            reply_markup=markup,                 
+            disable_web_page_preview=True,
         )
+        
     finally:
         os.remove(download_location)
+
 
 @app.on_message(filters.command(['tgt']))
 async def tgt(_, message: Message):
     reply = message.reply_to_message
-    
+
     if not reply or not reply.text:
-       return await message.reply("Balas ke pesan teks")
+        return await message.reply("Reply to a text")
 
     page_name = f"🤖 Bot Sep 21 Publik"
-    page = telegraph.create_page(html_content=reply.text.html)
-    return await message.reply(
-        f"[Here Your Telegra.ph Link!]({page['url']})",
+    page = telegraph.create_page(page_name, html_content=reply.text.html)
+    url = f"{page['url']}"
+    markup = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('Here Your Telegra.ph Link!', url=url)
+        ]]
+    )
+    return await message.reply_text(
+        text=f"<b>🗣️ Request by {message.from_user.mention}</b>",
+        reply_markup=markup,                 
         disable_web_page_preview=True,
     )
+       
         
-        
-TGM_HANDLER = CommandHandler("tgm", tgm)
+TGM_HANDLER = CommandHandler("tgmn", tgm)
 TGT_HANDLER = CommandHandler("tgt", tgt)
 
 dispatcher.add_handler(TGM_HANDLER)
