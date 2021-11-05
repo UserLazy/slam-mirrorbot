@@ -8,9 +8,10 @@ from functools import partial
 
 import aiofiles
 from pykeyboard import InlineKeyboard
-from pyrogram import filters, Client
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton
 
+from bot import app
 from aiohttp import ClientSession
 
 session = ClientSession()
@@ -55,7 +56,7 @@ async def isPreviewUp(preview: str) -> bool:
     return False
 
 
-@Client.on_message(filters.command("haste") & ~filters.edited)
+@app.on_message(filters.command("haste") & ~filters.edited)
 async def paste_func(_, message):
     if not message.reply_to_message:
         return await message.reply_text(
