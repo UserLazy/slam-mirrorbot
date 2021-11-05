@@ -1,71 +1,100 @@
-import os
-
-from pyrogram import filters
-from pyrogram.types import Message
-from telegraph import upload_file
-
-from bot import app, dispatcher, telegraph
-from telegram.ext import CommandHandler
-
-@app.on_message(filters.command(['telegraph']))
-async def tgm(client, message):
-    replied = message.reply_to_message
-    if not replied:
-        await message.reply("Reply to a supported media file")
-        return
-    if not (
-        (replied.photo and replied.photo.file_size <= 5242880)
-        or (replied.animation and replied.animation.file_size <= 5242880)
-        or (
-            replied.video
-            and replied.video.file_name.endswith(".mp4")
-            and replied.video.file_size <= 5242880
-        )
-        or (
-            replied.document
-            and replied.document.file_name.endswith(
-                (".jpg", ".jpeg", ".png", ".gif", ".mp4"),
-            )
-            and replied.document.file_size <= 5242880
-        )
-    ):
-        await message.reply("Not supported!")
-        return
-    download_location = await client.download_media(
-        message=message.reply_to_message,
-        file_name="root/downloads/",
-    )
-    try:
-        response = upload_file(download_location)
-    except Exception as document:
-        await message.reply(message, text=document)
-    else:
-        await message.reply(
-            f"[Here Your Telegra.ph Link!](https://telegra.ph{response[0]})",                  
-            disable_web_page_preview=True,
-        )
-        
-    finally:
-        os.remove(download_location)
-
-
-@app.on_message(filters.command(['telegraphtext']))
-async def tgt(_, message: Message):
-    reply = message.reply_to_message
-
-    if not reply or not reply.text:
-        return await message.reply("Balas ke pesan teks😌")
-
-    page_name = f"Robot Gledek⚡"
-    page = telegraph.create_page(page_name, html_content=reply.text.html)
-    return await message.reply(
-        f"[Here Your Telegra.ph Link!]({page['url']})",
-        disable_web_page_preview=True,
-    )
-       
-        
-TELEGRAPH_HANDLER = CommandHandler("telegraph", tgm)
-TELEGRAPHTEXT_HANDLER = CommandHandler("telegraphtext", tgt)
-
-dispatcher.add_handler(TELEGRAPH_HANDLER)
-dispatcher.add_handler(TELEGRAPHTEXT_HANDLER)
+import asyncio
+import os
+import re
+import socket
+
+from asyncio import get_running_loop
+from functools import partial
+
+import aiofiles
+from pykeyboard import InlineKeyboard
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton
+
+from aiohttp import ClientSession
+
+from bot import app, dispatcher
+from telegram.ext import CommandHandler
+
+session = ClientSession()
+
+pattern = re.compile(
+    r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$"
+)
+
+def _netcat(host, port, content):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host, port))
+    s.sendall(content.encode())
+    s.shutdown(socket.SHUT_WR)
+    while True:
+        data = s.recv(4096).decode("utf-8").strip("\n\x00")
+        if not data:
+            break
+        return data
+    s.close()
+
+
+async def paste(content):
+    loop = get_running_loop()
+    link = await loop.run_in_executor(
+        None, partial(_netcat, "ezup.dev", 9999, content)
+    )
+    return link
+    
+    
+async def isPreviewUp(preview: str) -> bool:
+    for _ in range(7):
+        try:
+            async with session.head(preview, timeout=2) as resp:
+                status = resp.status
+                size = resp.content_length
+        except asyncio.exceptions.TimeoutError:
+            return False
+        if status == 404 or (status == 200 and size == 0):
+            await asyncio.sleep(0.4)
+        else:
+            return True if status == 200 else False
+    return False
+
+
+@Client.on_message(filters.command("ezup") & ~filters.edited)
+async def paste_func(_, message):
+    if not message.reply_to_message:
+        return await message.reply_text(
+            "Reply To A Message With /paste"
+        )
+    m = await message.reply_text("Pasting...")
+    if message.reply_to_message.text:
+        content = str(message.reply_to_message.text)
+    elif message.reply_to_message.document:
+        document = message.reply_to_message.document
+        if document.file_size > 1048576:
+            return await m.edit(
+                "You can only paste files smaller than 1MB."
+            )
+        if not pattern.search(document.mime_type):
+            return await m.edit("Only text files can be pasted.")
+        doc = await message.reply_to_message.download()
+        async with aiofiles.open(doc, mode="r") as f:
+            content = await f.read()
+        os.remove(doc)
+    link = await paste(content)
+    preview = link + "/preview.png"
+    button = InlineKeyboard(row_width=1)
+    button.add(InlineKeyboardButton(text="Paste Link", url=link))
+
+    if await isPreviewUp(preview):
+        try:
+            await message.reply_photo(
+                photo=preview, quote=False, reply_markup=button
+            )
+            return await m.delete()
+        except Exception:
+            pass
+    return await m.edit(link)
+
+
+EZUP_HANDLER = CommandHandler("ezup", ezup)
+
+dispatcher.add_handler(EZUP_HANDLER)
