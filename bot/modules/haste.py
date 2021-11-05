@@ -58,11 +58,11 @@ async def isPreviewUp(preview: str) -> bool:
     return False
 
 
-@Client.on_message(filters.command("ezup") & ~filters.edited)
+@Client.on_message(filters.command("haste") & ~filters.edited)
 async def paste_func(_, message):
     if not message.reply_to_message:
         return await message.reply_text(
-            "Reply To A Message With /paste"
+            "Reply To A Message With /haste"
         )
     m = await message.reply_text("Pasting...")
     if message.reply_to_message.text:
@@ -95,6 +95,6 @@ async def paste_func(_, message):
     return await m.edit(link)
 
 
-EZUP_HANDLER = CommandHandler("ezup", ezup)
+HASTE_HANDLER = CommandHandler("haste", ezup)
 
-dispatcher.add_handler(EZUP_HANDLER)
+dispatcher.add_handler(HASTE_HANDLER)
