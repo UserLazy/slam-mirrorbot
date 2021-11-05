@@ -8,13 +8,10 @@ from functools import partial
 
 import aiofiles
 from pykeyboard import InlineKeyboard
-from pyrogram import filters, client
+from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton
 
 from aiohttp import ClientSession
-
-from bot import app, dispatcher
-from telegram.ext import CommandHandler
 
 session = ClientSession()
 
@@ -93,8 +90,3 @@ async def paste_func(_, message):
         except Exception:
             pass
     return await m.edit(link)
-
-
-HASTE_HANDLER = CommandHandler("haste", ezup)
-
-dispatcher.add_handler(HASTE_HANDLER)
