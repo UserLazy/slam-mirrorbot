@@ -8,7 +8,7 @@ from functools import partial
 
 import aiofiles
 from pykeyboard import InlineKeyboard
-from pyrogram import filters
+from pyrogram import filters, client
 from pyrogram.types import InlineKeyboardButton
 
 from aiohttp import ClientSession
